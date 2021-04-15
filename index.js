@@ -28,13 +28,9 @@ var slider = new Swiper(".swiper-container", {
     el: ".planet-links",
     clickable: true,
     renderBullet: function (index, className) {
-      console.log(vw);
-      if (vw < 850) {
-        return (
-          '<div class="' + className + '">' + keys[index][0] + "</div>"
-        );
-      }
-      return '<div class="' + className + '">' + keys[index] + "</div>";
+      
+     
+      return '<div class="' + className + '">' + keys[index][0] + "</div>";
     },
   },
 });
