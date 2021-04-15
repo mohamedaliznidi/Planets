@@ -283,7 +283,8 @@ section {
     width: 60%;
   }
   .fore,
-  .rock1 {
+  .rock1,
+  .planet-links {
     visibility: hidden;
   }
   .earth {
@@ -296,5 +297,9 @@ section {
   }
   .text h1 {
     font-size: 10vw;
+  }
+  .planet-links-small {
+    z-index: 100;
+    color: white;
   }
 }

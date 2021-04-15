@@ -3,6 +3,11 @@
 let screen = document.getElementById("screen");
 let parallaxInstance = new Parallax(screen);
 
+const vw = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+);
+
 var keys = [
   "Mercury",
   "Venus",
@@ -23,13 +28,18 @@ var slider = new Swiper(".swiper-container", {
     el: ".planet-links",
     clickable: true,
     renderBullet: function (index, className) {
+      console.log(vw);
+      if (vw < 850) {
+        return (
+          '<div class="' + className + '">' + keys[index][0] + "</div>"
+        );
+      }
       return '<div class="' + className + '">' + keys[index] + "</div>";
     },
   },
 });
 
 slider.on("slideChange", function () {
-  
   gsap.to(".slide-text span", 0.2, {
     x: "-100px",
   });
